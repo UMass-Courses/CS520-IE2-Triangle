@@ -1,0 +1,77 @@
+
+Coverage Report:
+1. Statement Coverage: 99%
+2. Branch Coverage: 99%
+3. Mutation Coverage: 98.1%
+
+Questions:
+
+1. The two best programming practices are
+    1.1. Understandability: The classes and methods have docstrings, and the 
+    names in the enum are self-explanatory.
+    1.2. 
+
+2. 
+    Initial statement coverage: 89%
+    Initial decision coverage: 91%
+    Initial mutation coverage: 23.1%
+
+    Name               Stmts   Miss  Cover   Missing
+    ------------------------------------------------
+    test_triangle.py       9      1    89%   14
+    ------------------------------------------------
+    TOTAL                  9      1    89%
+    Wrote HTML report to initial_statement_html/index.html
+    .
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.000s
+
+
+    Name               Stmts   Miss Branch BrPart  Cover   Missing
+    --------------------------------------------------------------
+    test_triangle.py       9      0      2      1    91%   13->exit
+    --------------------------------------------------------------
+    TOTAL                  9      0      2      1    91%
+    Wrote HTML report to initial_decision_html/index.html
+
+    [*] Mutation score [3.07433 s]: 23.1%
+    - all: 52
+    - killed: 12 (23.1%)
+    - survived: 40 (76.9%)
+    - incompetent: 0 (0.0%)
+    - timeout: 0 (0.0%)
+
+3. Our approach for writing test did change between developing a coverage-
+    adequate test suite and developing a mutation-adequate test suite. While 
+    developing a coverage-adequate test suite, we focused on writing test cases
+    that would cover all the statements and branches in the program by some
+    test case. However, when developing the tests for mutation adequacy, we
+    needed to write multiple test cases for many of the statements and branches
+    to detect different types of mutations that could occur in the same 
+    statement.
+
+4. Sometimes some mutants are such that they do not change the behavior of the 
+    program, and therefore cannot be detected by the test suite. For example,
+    if a mutant is such that it only changes the output when one of the sides of
+    the triangle is negative, but we have already previously handled that case
+    somewhere else in the program, then the mutant will not be detected by the
+    test suite.
+
+5. After removing the assertion statements:
+    5.1 Statement coverage went down from 99% to 98% (1 percentage point reduction)
+    5.2 Branch coverage went down from 99% to 98% (1 percentage point reduction)
+    5.3 Mutation coverage went down from 98.1% to 0% (98.1 percentage point reduction)
+
+6. Test case redundancy is when two or more test cases are testing the same 
+    behavior of the program, and they do the same thing. Based on this definition,
+    our test suite does not have any redundant test cases, because we incrementally
+    added test cases to our test suite to test particular behaviors of the program.
+    It is generally a good idea to remove redundant test cases, because they do not
+    add any value to the test suite, and only increase the time it takes to run the
+    test suite. However, it is also important to make sure that the test cases we
+    remove are actually redundant, and do not test any behavior that is not tested
+    by any other test case, and if the extra time it takes to run the test suite
+    is not too much, then it might be better to keep the test cases as a safety
+    measure.
+
+7. 
